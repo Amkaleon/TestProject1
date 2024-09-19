@@ -62,14 +62,14 @@ def scrap_det_mir():
         logger.error(f'[!] Ошибка при парсинге: {e}', exc_info=True)
 
     try:
-        with open('data.json', 'w', encoding='UTF-8') as json_file:
+        with open('DetMir.json', 'w', encoding='UTF-8') as json_file:
             # Преобразуем список словарей в строку формата JSON
             json.dump(data_list, json_file, indent=4, ensure_ascii=False)
-            logger.info('[+] Данные успешно сохранены в файл data.json')
-            print('[+] Данные успешно сохранены в файл data.json')
+            logger.info('[+] Данные успешно сохранены в файл DetMir.json')
+            print('[+] Данные успешно сохранены в файл DetMir.json')
     except Exception as e:
         logger.error(f'[!] Ошибка при сохранении данных: {e}', exc_info=True)
-        print('[!] Произошла ошибка при записи данных в файл data.json')
+        print('[!] Произошла ошибка при записи данных в файл DetMir.json')
 
 
 def main():
