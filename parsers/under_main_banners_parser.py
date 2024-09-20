@@ -3,38 +3,48 @@ from typing import List, Dict, Any
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 
+from database import connect_to_db, insert_data_list
+from psycopg2 import Error
+
 
 def parse_under_main_banners(browser) -> List[Dict[str, Any]]:
     data_list = []
 
     # Находим контейнер под основными баннерами
-    under_main_banners_container = browser.find_element(By.XPATH, '//section[@data-testid="tileUnderMainCarouselBlock"]')
+    under_main_banners_container = browser.find_element(
+        By.XPATH, '//section[@data-testid="tileUnderMainCarouselBlock"]')
 
     # Прокрутить страницу до элемента
-    browser.execute_script("arguments[0].scrollIntoView();", under_main_banners_container)
+    browser.execute_script(
+        "arguments[0].scrollIntoView();",
+        under_main_banners_container)
     browser.implicitly_wait(2)
 
     # Находим все карточки товаров внутри контейнера
-    item_cards = under_main_banners_container.find_elements(By.XPATH, './/li[@data-testid="advContainer"]')
+    item_cards = under_main_banners_container.find_elements(
+        By.XPATH, './/li[@data-testid="advContainer"]')
 
     for index, item_card in enumerate(item_cards):
         try:
             browser.implicitly_wait(1)
 
             # Получаем ссылку на изображение
-            image_url = item_card.find_element(By.TAG_NAME, 'img').get_attribute('src')
+            image_url = item_card.find_element(
+                By.TAG_NAME, 'img').get_attribute('src')
         except NoSuchElementException:
             image_url = 'Изображение отсутствует'
 
         try:
             # Получаем ссылку на каталог
-            content_url = item_card.find_element(By.TAG_NAME, 'a').get_attribute('href')
+            content_url = item_card.find_element(
+                By.TAG_NAME, 'a').get_attribute('href')
         except NoSuchElementException:
             content_url = 'Ссылка на товар отсутствует'
 
         try:
             # Получаем описание товара
-            caption_slide = item_card.find_element(By.TAG_NAME, 'img').get_attribute('alt')
+            caption_slide = item_card.find_element(
+                By.TAG_NAME, 'img').get_attribute('alt')
         except NoSuchElementException:
             caption_slide = 'Описание отсутствует'
 
@@ -54,5 +64,16 @@ def parse_under_main_banners(browser) -> List[Dict[str, Any]]:
             "place": 2,
             "position": index + 1
         })
+
+
+        connection = connect_to_db()
+        try:
+            if connection:
+                insert_data_list(connection, image_url, content_url, caption_slide, 2, index + 1)
+        except (Exception, Error) as error:
+            print("Ошибка при работе с PostgreSQL", error)
+        finally:
+            if connection:
+                connection.close()
 
     return data_list

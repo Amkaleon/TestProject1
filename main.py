@@ -1,11 +1,7 @@
 import json
-import time
 
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-
-from logger import setup_logger
-from config import useragent
+from webdriver import create_driver
+from logs.logger import setup_logger
 from parsers.header_banner_parser import parse_header_banner
 from parsers.home_hot_deals_parser import parse_home_hot_deals
 from parsers.main_banners_parser import parse_main_banners
@@ -13,17 +9,10 @@ from parsers.recommendations_parser import parse_recommendations
 from parsers.under_main_banners_parser import parse_under_main_banners
 
 # Работает на версии python 3.10
-import undetected_chromedriver as uc
+# import undetected_chromedriver as uc
 
 # Запускаем логгер для перехвата ошибок
 logger = setup_logger()
-
-options = webdriver.ChromeOptions()
-
-# options.add_argument('--headless')
-# options.add_argument('--disable-gpu')
-# options.add_argument(f"--proxy-server={random.choice(proxy_list)}")
-# options.add_argument(f'--user-agent={useragent}')
 
 
 def scrap_det_mir():
@@ -37,7 +26,7 @@ def scrap_det_mir():
 
     try:
         # Инициализация через официальную библиотеку
-        with webdriver.Chrome(options=options) as browser:
+        with create_driver() as browser:
             browser.get('https://www.detmir.ru/')
             browser.implicitly_wait(2)
 
@@ -59,7 +48,7 @@ def scrap_det_mir():
             print('[+] Парсинг окончен успешно')
             logger.info('[+] Парсинг окончен успешно')
     except Exception as e:
-        print(f'[!] Произошла ошибка во время парсинга {e}')
+        print(f'[!] Произошла ошибка во время парсинга: {e}')
         logger.error(f'[!] Ошибка при парсинге: {e}', exc_info=True)
 
     try:

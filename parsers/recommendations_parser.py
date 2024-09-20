@@ -5,24 +5,32 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from database import connect_to_db, insert_data_list
+from psycopg2 import Error
+
 
 def parse_recommendations(browser) -> List[Dict[str, Any]]:
     data_list = []
 
     # Ожидание, пока элемент с текстом "Может понравиться" станет доступным
-    recommendations_container = WebDriverWait(browser, 20).until(
-        EC.presence_of_element_located((By.XPATH, '//h2[span[text()="Может понравиться"]]'))
-    )
+    recommendations_container = WebDriverWait(
+        browser, 20).until(
+        EC.presence_of_element_located(
+            (By.XPATH, '//h2[span[text()="Может понравиться"]]')))
 
     # Скроллим страницу до элемента
-    browser.execute_script("arguments[0].scrollIntoView();", recommendations_container)
+    browser.execute_script(
+        "arguments[0].scrollIntoView();",
+        recommendations_container)
 
     # Найти родительскую секцию (поиск родительского элемента секции)
-    parent_section = recommendations_container.find_element(By.XPATH, './ancestor::section')
+    parent_section = recommendations_container.find_element(
+        By.XPATH, './ancestor::section')
 
-    # Находим элемент контейнера продуктов, который имеет атрибут data-testid со значением "Products" или "Recommendations"(Может меняться)
-    products_container = parent_section.find_element(By.XPATH,
-                                                     './/div[@data-testid="Products" or @data-testid="Recommendations"]')
+    # Находим элемент контейнера продуктов, который имеет атрибут data-testid
+    # со значением "Products" или "Recommendations"(Может меняться)
+    products_container = parent_section.find_element(
+        By.XPATH, './/div[@data-testid="Products" or @data-testid="Recommendations"]')
     # Получаем верхнеуровневые div элементы без вложенных div
     product_cards = products_container.find_elements(By.XPATH, './div')
 
@@ -32,19 +40,23 @@ def parse_recommendations(browser) -> List[Dict[str, Any]]:
         try:
             browser.implicitly_wait(1)
             # Получаем ссылку на изображение
-            image_url = slide.find_element(By.TAG_NAME, 'img').get_attribute('src')
+            image_url = slide.find_element(
+                By.TAG_NAME, 'img').get_attribute('src')
         except NoSuchElementException:
             image_url = 'Изображение отсутствует'
 
         try:
             # Получаем ссылку на каталог
-            content_url = slide.find_element(By.TAG_NAME, 'a').get_attribute('href')
+            content_url = slide.find_element(
+                By.TAG_NAME, 'a').get_attribute('href')
         except NoSuchElementException:
             content_url = 'Ссылка на товар отсутствует'
 
         try:
-            # Забираем описание каталога, которое находится в элементе "span" родительского элемента 'a'
-            caption_slide = slide.find_element(By.TAG_NAME, 'img').get_attribute('alt')
+            # Забираем описание каталога, которое находится в элементе "span"
+            # родительского элемента 'a'
+            caption_slide = slide.find_element(
+                By.TAG_NAME, 'img').get_attribute('alt')
         except NoSuchElementException:
             caption_slide = 'Описание отсутствует'
 
@@ -64,5 +76,15 @@ def parse_recommendations(browser) -> List[Dict[str, Any]]:
             "place": 4,
             "position": index + 1
         })
+
+        connection = connect_to_db()
+        try:
+            if connection:
+                insert_data_list(connection, image_url, content_url, caption_slide, 4, index + 1)
+        except (Exception, Error) as error:
+            print("Ошибка при работе с PostgreSQL", error)
+        finally:
+            if connection:
+                connection.close()
 
     return data_list

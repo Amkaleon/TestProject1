@@ -1,5 +1,3 @@
-import time
-from pprint import pprint
 from typing import List, Dict, Any
 
 from selenium.webdriver.common.by import By
@@ -7,39 +5,44 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException,
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from database import connect_to_db, insert_data_list
+from psycopg2 import Error
 
 def parse_main_banners(browser) -> List[Dict[str, Any]]:
     data_list = []
     # Находим секцию с главным баннером. Ожидаем, пока элемент станет видимым.
-    main_banners_container = WebDriverWait(browser, 5).until(
-        EC.presence_of_element_located((By.XPATH, '//section[@data-testid="homeMainBlock"]'))
-    )
+    main_banners_container = WebDriverWait(
+        browser, 5).until(
+        EC.presence_of_element_located(
+            (By.XPATH, '//section[@data-testid="homeMainBlock"]')))
 
-    # Пытаемся переключать слайды, нажимая кнопку "вперёд". Количество нажатий равно числу слайдов.
+    # Пытаемся переключать слайды, нажимая кнопку "вперёд". Количество нажатий
+    # равно числу слайдов.
     while True:
         try:
             # Ожидаем появления кнопки переключения слайдов и кликаем по ней.
-            button = WebDriverWait(main_banners_container, 5).until(
+            button = WebDriverWait(
+                main_banners_container, 5).until(
                 EC.presence_of_element_located(
-                    (By.XPATH, '//*[@id="mainPageContainer"]/section[2]/div/div/div/button[2]'))
-            )
+                    (By.XPATH, '//*[@id="mainPageContainer"]/section[2]/div/div/div/button[2]')))
             button.click()
         except (NoSuchElementException, TimeoutException, StaleElementReferenceException):
-            # Если кнопка не найдена или истекло время ожидания, значит мы дошли до последнего слайда, выходим из цикла.
+            # Если кнопка не найдена или истекло время ожидания, значит мы
+            # дошли до последнего слайда, выходим из цикла.
             break
 
     # Ожидаем 15 секунд, чтобы все слайды подгрузились корректно.
     # time.sleep(15)
 
     # Ожидаем появления карусели с баннерами.
-    banners_carousel_container = WebDriverWait(main_banners_container, 20).until(
-        EC.presence_of_element_located((By.XPATH, './/div[@data-testid="BannersCarousel"]'))
-    )
+    banners_carousel_container = WebDriverWait(
+        main_banners_container, 20).until(
+        EC.presence_of_element_located(
+            (By.XPATH, './/div[@data-testid="BannersCarousel"]')))
 
     # Находим все слайды баннеров в карусели.
-    slide_elements = banners_carousel_container.find_elements(By.XPATH, './/div[@data-testid="advContainer"]')
-
-
+    slide_elements = banners_carousel_container.find_elements(
+        By.XPATH, './/div[@data-testid="advContainer"]')
 
     # Итерация по каждому слайду
     for index, slide in enumerate(slide_elements):
@@ -56,14 +59,16 @@ def parse_main_banners(browser) -> List[Dict[str, Any]]:
 
         try:
             # Получаем ссылку на каталог
-            content_url = slide.find_element(By.TAG_NAME, 'a').get_attribute('href')
+            content_url = slide.find_element(
+                By.TAG_NAME, 'a').get_attribute('href')
 
         except NoSuchElementException:
             content_url = 'Ссылка на товар отсутствует'
 
         try:
             # Получаем описание товара
-            caption_slide = slide.find_element(By.TAG_NAME, 'img').get_attribute('alt')
+            caption_slide = slide.find_element(
+                By.TAG_NAME, 'img').get_attribute('alt')
 
         except NoSuchElementException:
             caption_slide = 'Описание отсутствует'
@@ -83,6 +88,16 @@ def parse_main_banners(browser) -> List[Dict[str, Any]]:
             "place": 1,
             "position": index + 1
         })
+
+        connection = connect_to_db()
+        try:
+            if connection:
+                insert_data_list(connection, image_url, content_url, caption_slide, 1, index+1)
+        except (Exception, Error) as error:
+            print("Ошибка при работе с PostgreSQL", error)
+        finally:
+            if connection:
+                connection.close()
 
     # Возвращаем список всех собранных данных.
     return data_list
