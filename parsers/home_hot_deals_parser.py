@@ -1,7 +1,7 @@
 from typing import List, Dict, Any
 
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -9,14 +9,18 @@ from selenium.webdriver.support import expected_conditions as EC
 def parse_home_hot_deals(browser) -> List[Dict[str, Any]]:
     data_list = []
 
-    # Находим контейнер "Предложения от брендов"
-    home_hot_deals_block_container = browser.find_element(By.XPATH, '//section[@data-testid="homeHotDealsBlock"]')
+    # Ожидание, пока элемент с текстом "Предложения от брендов" станет доступным
+    home_hot_deals_block_container = WebDriverWait(browser, 20).until(
+        EC.presence_of_element_located((By.XPATH, '//section[@data-testid="homeHotDealsBlock"]'))
+    )
 
     # Скроллим страницу до элемента
     browser.execute_script("arguments[0].scrollIntoView();", home_hot_deals_block_container)
 
     # Собираем все слайды в этом блоке
-    slide_elements = home_hot_deals_block_container.find_elements(By.CLASS_NAME, 'swiper-slide')
+    banners_carousel = home_hot_deals_block_container.find_element(By.XPATH, './/div[@data-testid="Banners"]')
+
+    slide_elements = banners_carousel.find_elements(By.XPATH, './/li[@data-testid="advContainer"]')
 
     # Итерация по каждому слайду
     for index, slide in enumerate(slide_elements):
@@ -63,14 +67,11 @@ def parse_home_hot_deals(browser) -> List[Dict[str, Any]]:
             Так как изображения для баннера подгружаются динамически.
             Нажимаем кнопку переключить слайд вперёд после того как собрали данные с предыдущего.
             """
-            # Попробуем найти вторую кнопку
+            # Переключаем слайды
             WebDriverWait(home_hot_deals_block_container, 1).until(
                 EC.presence_of_element_located(
-                    (By.XPATH, '//*[@id="mainPageContainer"]/section[4]/div/div/button[2]'))).click()
-        except TimeoutException:
-            # Если первую не нашли, нажимаем на первую
-            WebDriverWait(home_hot_deals_block_container, 1).until(
-                EC.presence_of_element_located(
-                    (By.XPATH, '//*[@id="mainPageContainer"]/section[4]/div/div/button'))).click()
+                    (By.XPATH, './/button[@data-testid="BannersNext"]'))).click()
+        except (NoSuchElementException, TimeoutException, StaleElementReferenceException):
+            break
 
     return data_list

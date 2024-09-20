@@ -8,13 +8,14 @@ def parse_under_main_banners(browser) -> List[Dict[str, Any]]:
     data_list = []
 
     # Находим контейнер под основными баннерами
-    under_main_banners_container = browser.find_element(By.XPATH, '//section[@data-testid="underMainBanners"]')
+    under_main_banners_container = browser.find_element(By.XPATH, '//section[@data-testid="tileUnderMainCarouselBlock"]')
 
     # Прокрутить страницу до элемента
     browser.execute_script("arguments[0].scrollIntoView();", under_main_banners_container)
+    browser.implicitly_wait(2)
 
     # Находим все карточки товаров внутри контейнера
-    item_cards = under_main_banners_container.find_elements(By.XPATH, './/div[@data-testid="advContainer"]')
+    item_cards = under_main_banners_container.find_elements(By.XPATH, './/li[@data-testid="advContainer"]')
 
     for index, item_card in enumerate(item_cards):
         try:

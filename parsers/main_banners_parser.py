@@ -1,35 +1,63 @@
+import time
+from pprint import pprint
 from typing import List, Dict, Any
 
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
 def parse_main_banners(browser) -> List[Dict[str, Any]]:
     data_list = []
-    # Явное ожидание появления секции баннеров
-    wait = WebDriverWait(browser, 5)  # 3 секунды ожидания
-    wait.until(EC.presence_of_element_located((By.XPATH, '//section[@data-testid="mainBanners"]')))
+    # Находим секцию с главным баннером. Ожидаем, пока элемент станет видимым.
+    main_banners_container = WebDriverWait(browser, 5).until(
+        EC.presence_of_element_located((By.XPATH, '//section[@data-testid="homeMainBlock"]'))
+    )
 
-    # Поиск всех слайдов в секции mainBanners
-    main_banners_container = browser.find_element(By.XPATH, '//section[@data-testid="mainBanners"]')
-    slide_elements = main_banners_container.find_elements(By.CLASS_NAME, 'swiper-slide')
+    # Пытаемся переключать слайды, нажимая кнопку "вперёд". Количество нажатий равно числу слайдов.
+    while True:
+        try:
+            # Ожидаем появления кнопки переключения слайдов и кликаем по ней.
+            button = WebDriverWait(main_banners_container, 5).until(
+                EC.presence_of_element_located(
+                    (By.XPATH, '//*[@id="mainPageContainer"]/section[2]/div/div/div/button[2]'))
+            )
+            button.click()
+        except (NoSuchElementException, TimeoutException, StaleElementReferenceException):
+            # Если кнопка не найдена или истекло время ожидания, значит мы дошли до последнего слайда, выходим из цикла.
+            break
+
+    # Ожидаем 15 секунд, чтобы все слайды подгрузились корректно.
+    # time.sleep(15)
+
+    # Ожидаем появления карусели с баннерами.
+    banners_carousel_container = WebDriverWait(main_banners_container, 20).until(
+        EC.presence_of_element_located((By.XPATH, './/div[@data-testid="BannersCarousel"]'))
+    )
+
+    # Находим все слайды баннеров в карусели.
+    slide_elements = banners_carousel_container.find_elements(By.XPATH, './/div[@data-testid="advContainer"]')
+
+
 
     # Итерация по каждому слайду
     for index, slide in enumerate(slide_elements):
-
         try:
-            browser.implicitly_wait(1)
+            browser.implicitly_wait(3)
 
             # Получаем ссылку на изображение
-            image_url = slide.find_element(By.TAG_NAME, 'img').get_attribute('src')
+            img_element = WebDriverWait(slide, 5).until(
+                EC.presence_of_element_located((By.TAG_NAME, 'img')))
+            image_url = img_element.get_attribute('src')
+
         except NoSuchElementException:
             image_url = 'Изображение отсутствует'
 
         try:
             # Получаем ссылку на каталог
             content_url = slide.find_element(By.TAG_NAME, 'a').get_attribute('href')
+
         except NoSuchElementException:
             content_url = 'Ссылка на товар отсутствует'
 
@@ -56,17 +84,5 @@ def parse_main_banners(browser) -> List[Dict[str, Any]]:
             "position": index + 1
         })
 
-        try:
-            """
-            Так как изображения для баннера подгружаются автоматически.
-            Нажимаем кнопку переключить слайд вперёд после того как собрали данные с предыдущего слайда.
-            """
-
-            button = WebDriverWait(main_banners_container, 10).until(
-                EC.presence_of_element_located(
-                    (By.XPATH, '//*[@id="mainPageContainer"]/section[2]/div/div/button[2]')))
-
-            button.click()
-        except TimeoutException:
-            continue
+    # Возвращаем список всех собранных данных.
     return data_list

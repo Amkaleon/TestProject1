@@ -6,4 +6,4 @@ proxy_list = ["35.193.152.40:3128", "159.54.145.18:80", "165.225.220.251:80", "1
               "51.254.121.123:8088", "4.207.204.199:3128", "165.225.212.253:10524", "91.250.115.208:4444"]
 
 # Fake useragent Windows
-useragent = UserAgent("windows").Random()
+useragent = UserAgent("windows+chrome").Random()

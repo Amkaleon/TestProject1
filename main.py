@@ -1,7 +1,8 @@
 import json
-import logging
+import time
 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 from logger import setup_logger
 from config import useragent
@@ -12,7 +13,7 @@ from parsers.recommendations_parser import parse_recommendations
 from parsers.under_main_banners_parser import parse_under_main_banners
 
 # Работает на версии python 3.10
-# import undetected_chromedriver as uc
+import undetected_chromedriver as uc
 
 # Запускаем логгер для перехвата ошибок
 logger = setup_logger()
@@ -22,7 +23,7 @@ options = webdriver.ChromeOptions()
 # options.add_argument('--headless')
 # options.add_argument('--disable-gpu')
 # options.add_argument(f"--proxy-server={random.choice(proxy_list)}")
-options.add_argument(f'--user-agent={useragent}')
+# options.add_argument(f'--user-agent={useragent}')
 
 
 def scrap_det_mir():
@@ -58,13 +59,14 @@ def scrap_det_mir():
             print('[+] Парсинг окончен успешно')
             logger.info('[+] Парсинг окончен успешно')
     except Exception as e:
-        print('[!] Произошла ошибка во время парсинга')
+        print(f'[!] Произошла ошибка во время парсинга {e}')
         logger.error(f'[!] Ошибка при парсинге: {e}', exc_info=True)
 
     try:
         with open('DetMir.json', 'w', encoding='UTF-8') as json_file:
             # Преобразуем список словарей в строку формата JSON
             json.dump(data_list, json_file, indent=4, ensure_ascii=False)
+
             logger.info('[+] Данные успешно сохранены в файл DetMir.json')
             print('[+] Данные успешно сохранены в файл DetMir.json')
     except Exception as e:

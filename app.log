@@ -1,0 +1,866 @@
+2024-09-19 22:20:06,875 - logger - ERROR - [!] Ошибка при парсинге: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF72193FDA5+29557]
+	(No symbol) [0x00007FF7218B2240]
+	(No symbol) [0x00007FF72176B6EA]
+	(No symbol) [0x00007FF7217BFA15]
+	(No symbol) [0x00007FF7217BFC6C]
+	(No symbol) [0x00007FF72180BB07]
+	(No symbol) [0x00007FF7217E753F]
+	(No symbol) [0x00007FF7218088A3]
+	(No symbol) [0x00007FF7217E72A3]
+	(No symbol) [0x00007FF7217B12DF]
+	(No symbol) [0x00007FF7217B2451]
+	GetHandleVerifier [0x00007FF721C6DCBD+3363469]
+	GetHandleVerifier [0x00007FF721CB9B47+3674391]
+	GetHandleVerifier [0x00007FF721CAEAEB+3629243]
+	GetHandleVerifier [0x00007FF7219FFC66+815670]
+	(No symbol) [0x00007FF7218BD6EF]
+	(No symbol) [0x00007FF7218B92B4]
+	(No symbol) [0x00007FF7218B9450]
+	(No symbol) [0x00007FF7218A81FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\main.py", line 46, in scrap_det_mir
+    data_list.extend(parse_main_banners(browser))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\main_banners_parser.py", line 13, in parse_main_banners
+    wait.until(EC.presence_of_element_located((By.XPATH, '//section[@data-testid="mainBanners"]')))
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF72193FDA5+29557]
+	(No symbol) [0x00007FF7218B2240]
+	(No symbol) [0x00007FF72176B6EA]
+	(No symbol) [0x00007FF7217BFA15]
+	(No symbol) [0x00007FF7217BFC6C]
+	(No symbol) [0x00007FF72180BB07]
+	(No symbol) [0x00007FF7217E753F]
+	(No symbol) [0x00007FF7218088A3]
+	(No symbol) [0x00007FF7217E72A3]
+	(No symbol) [0x00007FF7217B12DF]
+	(No symbol) [0x00007FF7217B2451]
+	GetHandleVerifier [0x00007FF721C6DCBD+3363469]
+	GetHandleVerifier [0x00007FF721CB9B47+3674391]
+	GetHandleVerifier [0x00007FF721CAEAEB+3629243]
+	GetHandleVerifier [0x00007FF7219FFC66+815670]
+	(No symbol) [0x00007FF7218BD6EF]
+	(No symbol) [0x00007FF7218B92B4]
+	(No symbol) [0x00007FF7218B9450]
+	(No symbol) [0x00007FF7218A81FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
+2024-09-19 22:20:06,879 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 22:24:22,818 - logger - ERROR - [!] Ошибка при парсинге: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7CC78FDA5+29557]
+	(No symbol) [0x00007FF7CC702240]
+	(No symbol) [0x00007FF7CC5BB6EA]
+	(No symbol) [0x00007FF7CC60FA15]
+	(No symbol) [0x00007FF7CC60FC6C]
+	(No symbol) [0x00007FF7CC65BB07]
+	(No symbol) [0x00007FF7CC63753F]
+	(No symbol) [0x00007FF7CC6588A3]
+	(No symbol) [0x00007FF7CC6372A3]
+	(No symbol) [0x00007FF7CC6012DF]
+	(No symbol) [0x00007FF7CC602451]
+	GetHandleVerifier [0x00007FF7CCABDCBD+3363469]
+	GetHandleVerifier [0x00007FF7CCB09B47+3674391]
+	GetHandleVerifier [0x00007FF7CCAFEAEB+3629243]
+	GetHandleVerifier [0x00007FF7CC84FC66+815670]
+	(No symbol) [0x00007FF7CC70D6EF]
+	(No symbol) [0x00007FF7CC7092B4]
+	(No symbol) [0x00007FF7CC709450]
+	(No symbol) [0x00007FF7CC6F81FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\main.py", line 46, in scrap_det_mir
+    data_list.extend(parse_main_banners(browser))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\main_banners_parser.py", line 13, in parse_main_banners
+    wait.until(EC.presence_of_element_located((By.XPATH, '//section[@data-testid="mainBanners"]')))
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7CC78FDA5+29557]
+	(No symbol) [0x00007FF7CC702240]
+	(No symbol) [0x00007FF7CC5BB6EA]
+	(No symbol) [0x00007FF7CC60FA15]
+	(No symbol) [0x00007FF7CC60FC6C]
+	(No symbol) [0x00007FF7CC65BB07]
+	(No symbol) [0x00007FF7CC63753F]
+	(No symbol) [0x00007FF7CC6588A3]
+	(No symbol) [0x00007FF7CC6372A3]
+	(No symbol) [0x00007FF7CC6012DF]
+	(No symbol) [0x00007FF7CC602451]
+	GetHandleVerifier [0x00007FF7CCABDCBD+3363469]
+	GetHandleVerifier [0x00007FF7CCB09B47+3674391]
+	GetHandleVerifier [0x00007FF7CCAFEAEB+3629243]
+	GetHandleVerifier [0x00007FF7CC84FC66+815670]
+	(No symbol) [0x00007FF7CC70D6EF]
+	(No symbol) [0x00007FF7CC7092B4]
+	(No symbol) [0x00007FF7CC709450]
+	(No symbol) [0x00007FF7CC6F81FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
+2024-09-19 22:24:22,821 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 22:26:48,415 - logger - ERROR - [!] Ошибка при парсинге: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7CC78FDA5+29557]
+	(No symbol) [0x00007FF7CC702240]
+	(No symbol) [0x00007FF7CC5BB6EA]
+	(No symbol) [0x00007FF7CC60FA15]
+	(No symbol) [0x00007FF7CC60FC6C]
+	(No symbol) [0x00007FF7CC65BB07]
+	(No symbol) [0x00007FF7CC63753F]
+	(No symbol) [0x00007FF7CC6588A3]
+	(No symbol) [0x00007FF7CC6372A3]
+	(No symbol) [0x00007FF7CC6012DF]
+	(No symbol) [0x00007FF7CC602451]
+	GetHandleVerifier [0x00007FF7CCABDCBD+3363469]
+	GetHandleVerifier [0x00007FF7CCB09B47+3674391]
+	GetHandleVerifier [0x00007FF7CCAFEAEB+3629243]
+	GetHandleVerifier [0x00007FF7CC84FC66+815670]
+	(No symbol) [0x00007FF7CC70D6EF]
+	(No symbol) [0x00007FF7CC7092B4]
+	(No symbol) [0x00007FF7CC709450]
+	(No symbol) [0x00007FF7CC6F81FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\main.py", line 46, in scrap_det_mir
+    data_list.extend(parse_main_banners(browser))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\main_banners_parser.py", line 13, in parse_main_banners
+    wait.until(EC.presence_of_element_located((By.XPATH, '//section[@data-testid="mainBanners"]')))
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7CC78FDA5+29557]
+	(No symbol) [0x00007FF7CC702240]
+	(No symbol) [0x00007FF7CC5BB6EA]
+	(No symbol) [0x00007FF7CC60FA15]
+	(No symbol) [0x00007FF7CC60FC6C]
+	(No symbol) [0x00007FF7CC65BB07]
+	(No symbol) [0x00007FF7CC63753F]
+	(No symbol) [0x00007FF7CC6588A3]
+	(No symbol) [0x00007FF7CC6372A3]
+	(No symbol) [0x00007FF7CC6012DF]
+	(No symbol) [0x00007FF7CC602451]
+	GetHandleVerifier [0x00007FF7CCABDCBD+3363469]
+	GetHandleVerifier [0x00007FF7CCB09B47+3674391]
+	GetHandleVerifier [0x00007FF7CCAFEAEB+3629243]
+	GetHandleVerifier [0x00007FF7CC84FC66+815670]
+	(No symbol) [0x00007FF7CC70D6EF]
+	(No symbol) [0x00007FF7CC7092B4]
+	(No symbol) [0x00007FF7CC709450]
+	(No symbol) [0x00007FF7CC6F81FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
+2024-09-19 22:26:48,417 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 22:27:49,885 - logger - ERROR - [!] Ошибка при парсинге: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//section[@data-testid="mainBanners"]"}
+  (Session info: chrome=129.0.6668.58); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7CC78FDA5+29557]
+	(No symbol) [0x00007FF7CC702240]
+	(No symbol) [0x00007FF7CC5BB6EA]
+	(No symbol) [0x00007FF7CC60FA15]
+	(No symbol) [0x00007FF7CC60FC6C]
+	(No symbol) [0x00007FF7CC65BB07]
+	(No symbol) [0x00007FF7CC63753F]
+	(No symbol) [0x00007FF7CC6588A3]
+	(No symbol) [0x00007FF7CC6372A3]
+	(No symbol) [0x00007FF7CC6012DF]
+	(No symbol) [0x00007FF7CC602451]
+	GetHandleVerifier [0x00007FF7CCABDCBD+3363469]
+	GetHandleVerifier [0x00007FF7CCB09B47+3674391]
+	GetHandleVerifier [0x00007FF7CCAFEAEB+3629243]
+	GetHandleVerifier [0x00007FF7CC84FC66+815670]
+	(No symbol) [0x00007FF7CC70D6EF]
+	(No symbol) [0x00007FF7CC7092B4]
+	(No symbol) [0x00007FF7CC709450]
+	(No symbol) [0x00007FF7CC6F81FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\main.py", line 46, in scrap_det_mir
+    data_list.extend(parse_main_banners(browser))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\main_banners_parser.py", line 16, in parse_main_banners
+    main_banners_container = browser.find_element(By.XPATH, '//section[@data-testid="mainBanners"]')
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 748, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//section[@data-testid="mainBanners"]"}
+  (Session info: chrome=129.0.6668.58); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7CC78FDA5+29557]
+	(No symbol) [0x00007FF7CC702240]
+	(No symbol) [0x00007FF7CC5BB6EA]
+	(No symbol) [0x00007FF7CC60FA15]
+	(No symbol) [0x00007FF7CC60FC6C]
+	(No symbol) [0x00007FF7CC65BB07]
+	(No symbol) [0x00007FF7CC63753F]
+	(No symbol) [0x00007FF7CC6588A3]
+	(No symbol) [0x00007FF7CC6372A3]
+	(No symbol) [0x00007FF7CC6012DF]
+	(No symbol) [0x00007FF7CC602451]
+	GetHandleVerifier [0x00007FF7CCABDCBD+3363469]
+	GetHandleVerifier [0x00007FF7CCB09B47+3674391]
+	GetHandleVerifier [0x00007FF7CCAFEAEB+3629243]
+	GetHandleVerifier [0x00007FF7CC84FC66+815670]
+	(No symbol) [0x00007FF7CC70D6EF]
+	(No symbol) [0x00007FF7CC7092B4]
+	(No symbol) [0x00007FF7CC709450]
+	(No symbol) [0x00007FF7CC6F81FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
+2024-09-19 22:27:49,889 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 22:29:11,184 - logger - ERROR - [!] Ошибка при парсинге: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//section[@data-testid="underMainBanners"]"}
+  (Session info: chrome=129.0.6668.58); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7CC78FDA5+29557]
+	(No symbol) [0x00007FF7CC702240]
+	(No symbol) [0x00007FF7CC5BB6EA]
+	(No symbol) [0x00007FF7CC60FA15]
+	(No symbol) [0x00007FF7CC60FC6C]
+	(No symbol) [0x00007FF7CC65BB07]
+	(No symbol) [0x00007FF7CC63753F]
+	(No symbol) [0x00007FF7CC6588A3]
+	(No symbol) [0x00007FF7CC6372A3]
+	(No symbol) [0x00007FF7CC6012DF]
+	(No symbol) [0x00007FF7CC602451]
+	GetHandleVerifier [0x00007FF7CCABDCBD+3363469]
+	GetHandleVerifier [0x00007FF7CCB09B47+3674391]
+	GetHandleVerifier [0x00007FF7CCAFEAEB+3629243]
+	GetHandleVerifier [0x00007FF7CC84FC66+815670]
+	(No symbol) [0x00007FF7CC70D6EF]
+	(No symbol) [0x00007FF7CC7092B4]
+	(No symbol) [0x00007FF7CC709450]
+	(No symbol) [0x00007FF7CC6F81FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\main.py", line 49, in scrap_det_mir
+    data_list.extend(parse_under_main_banners(browser))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\under_main_banners_parser.py", line 11, in parse_under_main_banners
+    under_main_banners_container = browser.find_element(By.XPATH, '//section[@data-testid="underMainBanners"]')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 748, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//section[@data-testid="underMainBanners"]"}
+  (Session info: chrome=129.0.6668.58); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7CC78FDA5+29557]
+	(No symbol) [0x00007FF7CC702240]
+	(No symbol) [0x00007FF7CC5BB6EA]
+	(No symbol) [0x00007FF7CC60FA15]
+	(No symbol) [0x00007FF7CC60FC6C]
+	(No symbol) [0x00007FF7CC65BB07]
+	(No symbol) [0x00007FF7CC63753F]
+	(No symbol) [0x00007FF7CC6588A3]
+	(No symbol) [0x00007FF7CC6372A3]
+	(No symbol) [0x00007FF7CC6012DF]
+	(No symbol) [0x00007FF7CC602451]
+	GetHandleVerifier [0x00007FF7CCABDCBD+3363469]
+	GetHandleVerifier [0x00007FF7CCB09B47+3674391]
+	GetHandleVerifier [0x00007FF7CCAFEAEB+3629243]
+	GetHandleVerifier [0x00007FF7CC84FC66+815670]
+	(No symbol) [0x00007FF7CC70D6EF]
+	(No symbol) [0x00007FF7CC7092B4]
+	(No symbol) [0x00007FF7CC709450]
+	(No symbol) [0x00007FF7CC6F81FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
+2024-09-19 22:29:11,187 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 22:32:47,009 - logger - INFO - [+] Парсинг окончен успешно
+2024-09-19 22:32:49,199 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 22:36:46,515 - logger - INFO - [+] Парсинг окончен успешно
+2024-09-19 22:36:48,690 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 22:41:36,987 - logger - INFO - [+] Парсинг окончен успешно
+2024-09-19 22:41:39,172 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 22:42:57,277 - logger - INFO - [+] Парсинг окончен успешно
+2024-09-19 22:42:59,505 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 22:47:49,888 - logger - ERROR - [!] Ошибка при парсинге: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=129.0.6668.58)
+Stacktrace:
+	GetHandleVerifier [0x00007FF605D0FDA5+29557]
+	(No symbol) [0x00007FF605C82240]
+	(No symbol) [0x00007FF605B3B6EA]
+	(No symbol) [0x00007FF605B0FCD5]
+	(No symbol) [0x00007FF605BBF167]
+	(No symbol) [0x00007FF605BD81A1]
+	(No symbol) [0x00007FF605BB72A3]
+	(No symbol) [0x00007FF605B812DF]
+	(No symbol) [0x00007FF605B82451]
+	GetHandleVerifier [0x00007FF60603DCBD+3363469]
+	GetHandleVerifier [0x00007FF606089B47+3674391]
+	GetHandleVerifier [0x00007FF60607EAEB+3629243]
+	GetHandleVerifier [0x00007FF605DCFC66+815670]
+	(No symbol) [0x00007FF605C8D6EF]
+	(No symbol) [0x00007FF605C892B4]
+	(No symbol) [0x00007FF605C89450]
+	(No symbol) [0x00007FF605C781FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\main.py", line 46, in scrap_det_mir
+    data_list.extend(parse_main_banners(browser))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\main_banners_parser.py", line 67, in parse_main_banners
+    button = WebDriverWait(main_banners_container, 10).until(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\support\wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 417, in find_element
+    return self._execute(Command.FIND_CHILD_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=129.0.6668.58)
+Stacktrace:
+	GetHandleVerifier [0x00007FF605D0FDA5+29557]
+	(No symbol) [0x00007FF605C82240]
+	(No symbol) [0x00007FF605B3B6EA]
+	(No symbol) [0x00007FF605B0FCD5]
+	(No symbol) [0x00007FF605BBF167]
+	(No symbol) [0x00007FF605BD81A1]
+	(No symbol) [0x00007FF605BB72A3]
+	(No symbol) [0x00007FF605B812DF]
+	(No symbol) [0x00007FF605B82451]
+	GetHandleVerifier [0x00007FF60603DCBD+3363469]
+	GetHandleVerifier [0x00007FF606089B47+3674391]
+	GetHandleVerifier [0x00007FF60607EAEB+3629243]
+	GetHandleVerifier [0x00007FF605DCFC66+815670]
+	(No symbol) [0x00007FF605C8D6EF]
+	(No symbol) [0x00007FF605C892B4]
+	(No symbol) [0x00007FF605C89450]
+	(No symbol) [0x00007FF605C781FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
+2024-09-19 22:47:49,896 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 22:50:48,849 - logger - ERROR - [!] Ошибка при парсинге: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=129.0.6668.58)
+Stacktrace:
+	GetHandleVerifier [0x00007FF605D0FDA5+29557]
+	(No symbol) [0x00007FF605C82240]
+	(No symbol) [0x00007FF605B3B6EA]
+	(No symbol) [0x00007FF605B0FCD5]
+	(No symbol) [0x00007FF605BBF167]
+	(No symbol) [0x00007FF605BD81A1]
+	(No symbol) [0x00007FF605BB72A3]
+	(No symbol) [0x00007FF605B812DF]
+	(No symbol) [0x00007FF605B82451]
+	GetHandleVerifier [0x00007FF60603DCBD+3363469]
+	GetHandleVerifier [0x00007FF606089B47+3674391]
+	GetHandleVerifier [0x00007FF60607EAEB+3629243]
+	GetHandleVerifier [0x00007FF605DCFC66+815670]
+	(No symbol) [0x00007FF605C8D6EF]
+	(No symbol) [0x00007FF605C892B4]
+	(No symbol) [0x00007FF605C89450]
+	(No symbol) [0x00007FF605C781FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\main.py", line 46, in scrap_det_mir
+    data_list.extend(parse_main_banners(browser))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\main_banners_parser.py", line 67, in parse_main_banners
+    button = WebDriverWait(main_banners_container, 10).until(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\support\wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 417, in find_element
+    return self._execute(Command.FIND_CHILD_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=129.0.6668.58)
+Stacktrace:
+	GetHandleVerifier [0x00007FF605D0FDA5+29557]
+	(No symbol) [0x00007FF605C82240]
+	(No symbol) [0x00007FF605B3B6EA]
+	(No symbol) [0x00007FF605B0FCD5]
+	(No symbol) [0x00007FF605BBF167]
+	(No symbol) [0x00007FF605BD81A1]
+	(No symbol) [0x00007FF605BB72A3]
+	(No symbol) [0x00007FF605B812DF]
+	(No symbol) [0x00007FF605B82451]
+	GetHandleVerifier [0x00007FF60603DCBD+3363469]
+	GetHandleVerifier [0x00007FF606089B47+3674391]
+	GetHandleVerifier [0x00007FF60607EAEB+3629243]
+	GetHandleVerifier [0x00007FF605DCFC66+815670]
+	(No symbol) [0x00007FF605C8D6EF]
+	(No symbol) [0x00007FF605C892B4]
+	(No symbol) [0x00007FF605C89450]
+	(No symbol) [0x00007FF605C781FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
+2024-09-19 22:50:48,855 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 22:52:08,435 - logger - INFO - [+] Парсинг окончен успешно
+2024-09-19 22:52:10,612 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 22:56:51,197 - logger - INFO - [+] Парсинг окончен успешно
+2024-09-19 22:56:53,497 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 22:59:34,889 - logger - INFO - [+] Парсинг окончен успешно
+2024-09-19 22:59:37,045 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 23:01:19,069 - logger - ERROR - [!] Ошибка при парсинге: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="mainPageContainer"]/section[2]/div/div/button[2]"}
+  (Session info: chrome=129.0.6668.58); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF605D0FDA5+29557]
+	(No symbol) [0x00007FF605C82240]
+	(No symbol) [0x00007FF605B3B6EA]
+	(No symbol) [0x00007FF605B8FA15]
+	(No symbol) [0x00007FF605B8FC6C]
+	(No symbol) [0x00007FF605BDBB07]
+	(No symbol) [0x00007FF605BB753F]
+	(No symbol) [0x00007FF605BD88A3]
+	(No symbol) [0x00007FF605BB72A3]
+	(No symbol) [0x00007FF605B812DF]
+	(No symbol) [0x00007FF605B82451]
+	GetHandleVerifier [0x00007FF60603DCBD+3363469]
+	GetHandleVerifier [0x00007FF606089B47+3674391]
+	GetHandleVerifier [0x00007FF60607EAEB+3629243]
+	GetHandleVerifier [0x00007FF605DCFC66+815670]
+	(No symbol) [0x00007FF605C8D6EF]
+	(No symbol) [0x00007FF605C892B4]
+	(No symbol) [0x00007FF605C89450]
+	(No symbol) [0x00007FF605C781FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\main.py", line 46, in scrap_det_mir
+    data_list.extend(parse_main_banners(browser))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\main_banners_parser.py", line 72, in parse_main_banners
+    button = browser.find_element(By.XPATH, '//*[@id="mainPageContainer"]/section[2]/div/div/button[2]')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 748, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="mainPageContainer"]/section[2]/div/div/button[2]"}
+  (Session info: chrome=129.0.6668.58); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF605D0FDA5+29557]
+	(No symbol) [0x00007FF605C82240]
+	(No symbol) [0x00007FF605B3B6EA]
+	(No symbol) [0x00007FF605B8FA15]
+	(No symbol) [0x00007FF605B8FC6C]
+	(No symbol) [0x00007FF605BDBB07]
+	(No symbol) [0x00007FF605BB753F]
+	(No symbol) [0x00007FF605BD88A3]
+	(No symbol) [0x00007FF605BB72A3]
+	(No symbol) [0x00007FF605B812DF]
+	(No symbol) [0x00007FF605B82451]
+	GetHandleVerifier [0x00007FF60603DCBD+3363469]
+	GetHandleVerifier [0x00007FF606089B47+3674391]
+	GetHandleVerifier [0x00007FF60607EAEB+3629243]
+	GetHandleVerifier [0x00007FF605DCFC66+815670]
+	(No symbol) [0x00007FF605C8D6EF]
+	(No symbol) [0x00007FF605C892B4]
+	(No symbol) [0x00007FF605C89450]
+	(No symbol) [0x00007FF605C781FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
+2024-09-19 23:01:19,073 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 23:03:04,871 - logger - INFO - [+] Парсинг окончен успешно
+2024-09-19 23:03:07,028 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 23:04:12,301 - logger - ERROR - [!] Ошибка при парсинге: 'function' object has no attribute 'get_attribute'
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\main.py", line 46, in scrap_det_mir
+    data_list.extend(parse_main_banners(browser))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\main_banners_parser.py", line 31, in parse_main_banners
+    image_url = slide.find_element.get_attribute('src')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'get_attribute'
+2024-09-19 23:04:12,303 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 23:05:23,190 - logger - INFO - [+] Парсинг окончен успешно
+2024-09-19 23:05:25,642 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 23:13:59,862 - logger - INFO - [+] Парсинг окончен успешно
+2024-09-19 23:14:02,082 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 23:16:23,403 - logger - ERROR - [!] Ошибка при парсинге: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E482FDA5+29557]
+	(No symbol) [0x00007FF6E47A2240]
+	(No symbol) [0x00007FF6E465B6EA]
+	(No symbol) [0x00007FF6E46AFA15]
+	(No symbol) [0x00007FF6E46AFC6C]
+	(No symbol) [0x00007FF6E46A313C]
+	(No symbol) [0x00007FF6E46D753F]
+	(No symbol) [0x00007FF6E46A3006]
+	(No symbol) [0x00007FF6E46D7710]
+	(No symbol) [0x00007FF6E46F88A3]
+	(No symbol) [0x00007FF6E46D72A3]
+	(No symbol) [0x00007FF6E46A12DF]
+	(No symbol) [0x00007FF6E46A2451]
+	GetHandleVerifier [0x00007FF6E4B5DCBD+3363469]
+	GetHandleVerifier [0x00007FF6E4BA9B47+3674391]
+	GetHandleVerifier [0x00007FF6E4B9EAEB+3629243]
+	GetHandleVerifier [0x00007FF6E48EFC66+815670]
+	(No symbol) [0x00007FF6E47AD6EF]
+	(No symbol) [0x00007FF6E47A92B4]
+	(No symbol) [0x00007FF6E47A9450]
+	(No symbol) [0x00007FF6E47981FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\home_hot_deals_parser.py", line 73, in parse_home_hot_deals
+    WebDriverWait(home_hot_deals_block_container, 1).until(
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E482FDA5+29557]
+	(No symbol) [0x00007FF6E47A2240]
+	(No symbol) [0x00007FF6E465B6EA]
+	(No symbol) [0x00007FF6E46AFA15]
+	(No symbol) [0x00007FF6E46AFC6C]
+	(No symbol) [0x00007FF6E46A313C]
+	(No symbol) [0x00007FF6E46D753F]
+	(No symbol) [0x00007FF6E46A3006]
+	(No symbol) [0x00007FF6E46D7710]
+	(No symbol) [0x00007FF6E46F88A3]
+	(No symbol) [0x00007FF6E46D72A3]
+	(No symbol) [0x00007FF6E46A12DF]
+	(No symbol) [0x00007FF6E46A2451]
+	GetHandleVerifier [0x00007FF6E4B5DCBD+3363469]
+	GetHandleVerifier [0x00007FF6E4BA9B47+3674391]
+	GetHandleVerifier [0x00007FF6E4B9EAEB+3629243]
+	GetHandleVerifier [0x00007FF6E48EFC66+815670]
+	(No symbol) [0x00007FF6E47AD6EF]
+	(No symbol) [0x00007FF6E47A92B4]
+	(No symbol) [0x00007FF6E47A9450]
+	(No symbol) [0x00007FF6E47981FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\main.py", line 52, in scrap_det_mir
+    data_list.extend(parse_home_hot_deals(browser))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\home_hot_deals_parser.py", line 78, in parse_home_hot_deals
+    WebDriverWait(home_hot_deals_block_container, 1).until(
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E482FDA5+29557]
+	(No symbol) [0x00007FF6E47A2240]
+	(No symbol) [0x00007FF6E465B6EA]
+	(No symbol) [0x00007FF6E46AFA15]
+	(No symbol) [0x00007FF6E46AFC6C]
+	(No symbol) [0x00007FF6E46A313C]
+	(No symbol) [0x00007FF6E46D753F]
+	(No symbol) [0x00007FF6E46A3006]
+	(No symbol) [0x00007FF6E46D7710]
+	(No symbol) [0x00007FF6E46F88A3]
+	(No symbol) [0x00007FF6E46D72A3]
+	(No symbol) [0x00007FF6E46A12DF]
+	(No symbol) [0x00007FF6E46A2451]
+	GetHandleVerifier [0x00007FF6E4B5DCBD+3363469]
+	GetHandleVerifier [0x00007FF6E4BA9B47+3674391]
+	GetHandleVerifier [0x00007FF6E4B9EAEB+3629243]
+	GetHandleVerifier [0x00007FF6E48EFC66+815670]
+	(No symbol) [0x00007FF6E47AD6EF]
+	(No symbol) [0x00007FF6E47A92B4]
+	(No symbol) [0x00007FF6E47A9450]
+	(No symbol) [0x00007FF6E47981FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
+2024-09-19 23:16:23,407 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-19 23:19:45,815 - logger - ERROR - [!] Ошибка при парсинге: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E482FDA5+29557]
+	(No symbol) [0x00007FF6E47A2240]
+	(No symbol) [0x00007FF6E465B6EA]
+	(No symbol) [0x00007FF6E46AFA15]
+	(No symbol) [0x00007FF6E46AFC6C]
+	(No symbol) [0x00007FF6E46A313C]
+	(No symbol) [0x00007FF6E46D753F]
+	(No symbol) [0x00007FF6E46A3006]
+	(No symbol) [0x00007FF6E46D7710]
+	(No symbol) [0x00007FF6E46F88A3]
+	(No symbol) [0x00007FF6E46D72A3]
+	(No symbol) [0x00007FF6E46A12DF]
+	(No symbol) [0x00007FF6E46A2451]
+	GetHandleVerifier [0x00007FF6E4B5DCBD+3363469]
+	GetHandleVerifier [0x00007FF6E4BA9B47+3674391]
+	GetHandleVerifier [0x00007FF6E4B9EAEB+3629243]
+	GetHandleVerifier [0x00007FF6E48EFC66+815670]
+	(No symbol) [0x00007FF6E47AD6EF]
+	(No symbol) [0x00007FF6E47A92B4]
+	(No symbol) [0x00007FF6E47A9450]
+	(No symbol) [0x00007FF6E47981FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\home_hot_deals_parser.py", line 73, in parse_home_hot_deals
+    WebDriverWait(parent_section, 1).until(
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E482FDA5+29557]
+	(No symbol) [0x00007FF6E47A2240]
+	(No symbol) [0x00007FF6E465B6EA]
+	(No symbol) [0x00007FF6E46AFA15]
+	(No symbol) [0x00007FF6E46AFC6C]
+	(No symbol) [0x00007FF6E46A313C]
+	(No symbol) [0x00007FF6E46D753F]
+	(No symbol) [0x00007FF6E46A3006]
+	(No symbol) [0x00007FF6E46D7710]
+	(No symbol) [0x00007FF6E46F88A3]
+	(No symbol) [0x00007FF6E46D72A3]
+	(No symbol) [0x00007FF6E46A12DF]
+	(No symbol) [0x00007FF6E46A2451]
+	GetHandleVerifier [0x00007FF6E4B5DCBD+3363469]
+	GetHandleVerifier [0x00007FF6E4BA9B47+3674391]
+	GetHandleVerifier [0x00007FF6E4B9EAEB+3629243]
+	GetHandleVerifier [0x00007FF6E48EFC66+815670]
+	(No symbol) [0x00007FF6E47AD6EF]
+	(No symbol) [0x00007FF6E47A92B4]
+	(No symbol) [0x00007FF6E47A9450]
+	(No symbol) [0x00007FF6E47981FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\main.py", line 52, in scrap_det_mir
+    data_list.extend(parse_home_hot_deals(browser))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\home_hot_deals_parser.py", line 78, in parse_home_hot_deals
+    WebDriverWait(parent_section, 1).until(
+  File "C:\Users\ipslo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.11\Lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E482FDA5+29557]
+	(No symbol) [0x00007FF6E47A2240]
+	(No symbol) [0x00007FF6E465B6EA]
+	(No symbol) [0x00007FF6E46AFA15]
+	(No symbol) [0x00007FF6E46AFC6C]
+	(No symbol) [0x00007FF6E46A313C]
+	(No symbol) [0x00007FF6E46D753F]
+	(No symbol) [0x00007FF6E46A3006]
+	(No symbol) [0x00007FF6E46D7710]
+	(No symbol) [0x00007FF6E46F88A3]
+	(No symbol) [0x00007FF6E46D72A3]
+	(No symbol) [0x00007FF6E46A12DF]
+	(No symbol) [0x00007FF6E46A2451]
+	GetHandleVerifier [0x00007FF6E4B5DCBD+3363469]
+	GetHandleVerifier [0x00007FF6E4BA9B47+3674391]
+	GetHandleVerifier [0x00007FF6E4B9EAEB+3629243]
+	GetHandleVerifier [0x00007FF6E48EFC66+815670]
+	(No symbol) [0x00007FF6E47AD6EF]
+	(No symbol) [0x00007FF6E47A92B4]
+	(No symbol) [0x00007FF6E47A9450]
+	(No symbol) [0x00007FF6E47981FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
+2024-09-19 23:19:45,818 - logger - INFO - [+] Данные успешно сохранены в файл DetMir.json
+2024-09-20 13:43:31,492 - logger - ERROR - [!] Ошибка при парсинге: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=129.0.6668.58)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7DD09FDA5+29557]
+	(No symbol) [0x00007FF7DD012240]
+	(No symbol) [0x00007FF7DCECB6EA]
+	(No symbol) [0x00007FF7DCED22BE]
+	(No symbol) [0x00007FF7DCED4637]
+	(No symbol) [0x00007FF7DCED46F0]
+	(No symbol) [0x00007FF7DCF21B2B]
+	(No symbol) [0x00007FF7DCF13596]
+	(No symbol) [0x00007FF7DCF474FA]
+	(No symbol) [0x00007FF7DCF13006]
+	(No symbol) [0x00007FF7DCF47710]
+	(No symbol) [0x00007FF7DCF688A3]
+	(No symbol) [0x00007FF7DCF472A3]
+	(No symbol) [0x00007FF7DCF112DF]
+	(No symbol) [0x00007FF7DCF12451]
+	GetHandleVerifier [0x00007FF7DD3CDCBD+3363469]
+	GetHandleVerifier [0x00007FF7DD419B47+3674391]
+	GetHandleVerifier [0x00007FF7DD40EAEB+3629243]
+	GetHandleVerifier [0x00007FF7DD15FC66+815670]
+	(No symbol) [0x00007FF7DD01D6EF]
+	(No symbol) [0x00007FF7DD0192B4]
+	(No symbol) [0x00007FF7DD019450]
+	(No symbol) [0x00007FF7DD0081FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\main.py", line 48, in scrap_det_mir
+    data_list.extend(parse_main_banners(browser))
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\main_banners_parser.py", line 26, in parse_main_banners
+    button.click()
+  File "C:\Users\ipslo\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webelement.py", line 88, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\ipslo\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webelement.py", line 396, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\ipslo\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\ipslo\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 243, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=129.0.6668.58)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7DD09FDA5+29557]
+	(No symbol) [0x00007FF7DD012240]
+	(No symbol) [0x00007FF7DCECB6EA]
+	(No symbol) [0x00007FF7DCED22BE]
+	(No symbol) [0x00007FF7DCED4637]
+	(No symbol) [0x00007FF7DCED46F0]
+	(No symbol) [0x00007FF7DCF21B2B]
+	(No symbol) [0x00007FF7DCF13596]
+	(No symbol) [0x00007FF7DCF474FA]
+	(No symbol) [0x00007FF7DCF13006]
+	(No symbol) [0x00007FF7DCF47710]
+	(No symbol) [0x00007FF7DCF688A3]
+	(No symbol) [0x00007FF7DCF472A3]
+	(No symbol) [0x00007FF7DCF112DF]
+	(No symbol) [0x00007FF7DCF12451]
+	GetHandleVerifier [0x00007FF7DD3CDCBD+3363469]
+	GetHandleVerifier [0x00007FF7DD419B47+3674391]
+	GetHandleVerifier [0x00007FF7DD40EAEB+3629243]
+	GetHandleVerifier [0x00007FF7DD15FC66+815670]
+	(No symbol) [0x00007FF7DD01D6EF]
+	(No symbol) [0x00007FF7DD0192B4]
+	(No symbol) [0x00007FF7DD019450]
+	(No symbol) [0x00007FF7DD0081FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
+2024-09-20 13:44:38,777 - logger - ERROR - [!] Ошибка при парсинге: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=129.0.6668.58)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7DD09FDA5+29557]
+	(No symbol) [0x00007FF7DD012240]
+	(No symbol) [0x00007FF7DCECB6EA]
+	(No symbol) [0x00007FF7DCED22BE]
+	(No symbol) [0x00007FF7DCED4637]
+	(No symbol) [0x00007FF7DCED46F0]
+	(No symbol) [0x00007FF7DCF275D9]
+	(No symbol) [0x00007FF7DCF24B69]
+	(No symbol) [0x00007FF7DCF22608]
+	(No symbol) [0x00007FF7DCF2181A]
+	(No symbol) [0x00007FF7DCF136CE]
+	(No symbol) [0x00007FF7DCF474FA]
+	(No symbol) [0x00007FF7DCF13006]
+	(No symbol) [0x00007FF7DCF47710]
+	(No symbol) [0x00007FF7DCF688A3]
+	(No symbol) [0x00007FF7DCF472A3]
+	(No symbol) [0x00007FF7DCF112DF]
+	(No symbol) [0x00007FF7DCF12451]
+	GetHandleVerifier [0x00007FF7DD3CDCBD+3363469]
+	GetHandleVerifier [0x00007FF7DD419B47+3674391]
+	GetHandleVerifier [0x00007FF7DD40EAEB+3629243]
+	GetHandleVerifier [0x00007FF7DD15FC66+815670]
+	(No symbol) [0x00007FF7DD01D6EF]
+	(No symbol) [0x00007FF7DD0192B4]
+	(No symbol) [0x00007FF7DD019450]
+	(No symbol) [0x00007FF7DD0081FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+Traceback (most recent call last):
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\main.py", line 48, in scrap_det_mir
+    data_list.extend(parse_main_banners(browser))
+  File "C:\Users\ipslo\PycharmProjects\pythonProject\Test_Project1\parsers\main_banners_parser.py", line 26, in parse_main_banners
+    button.click()
+  File "C:\Users\ipslo\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webelement.py", line 88, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\ipslo\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webelement.py", line 396, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\ipslo\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\ipslo\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 243, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=129.0.6668.58)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7DD09FDA5+29557]
+	(No symbol) [0x00007FF7DD012240]
+	(No symbol) [0x00007FF7DCECB6EA]
+	(No symbol) [0x00007FF7DCED22BE]
+	(No symbol) [0x00007FF7DCED4637]
+	(No symbol) [0x00007FF7DCED46F0]
+	(No symbol) [0x00007FF7DCF275D9]
+	(No symbol) [0x00007FF7DCF24B69]
+	(No symbol) [0x00007FF7DCF22608]
+	(No symbol) [0x00007FF7DCF2181A]
+	(No symbol) [0x00007FF7DCF136CE]
+	(No symbol) [0x00007FF7DCF474FA]
+	(No symbol) [0x00007FF7DCF13006]
+	(No symbol) [0x00007FF7DCF47710]
+	(No symbol) [0x00007FF7DCF688A3]
+	(No symbol) [0x00007FF7DCF472A3]
+	(No symbol) [0x00007FF7DCF112DF]
+	(No symbol) [0x00007FF7DCF12451]
+	GetHandleVerifier [0x00007FF7DD3CDCBD+3363469]
+	GetHandleVerifier [0x00007FF7DD419B47+3674391]
+	GetHandleVerifier [0x00007FF7DD40EAEB+3629243]
+	GetHandleVerifier [0x00007FF7DD15FC66+815670]
+	(No symbol) [0x00007FF7DD01D6EF]
+	(No symbol) [0x00007FF7DD0192B4]
+	(No symbol) [0x00007FF7DD019450]
+	(No symbol) [0x00007FF7DD0081FF]
+	BaseThreadInitThunk [0x00007FFA8D8B257D+29]
+	RtlUserThreadStart [0x00007FFA8EE2AF28+40]
+
