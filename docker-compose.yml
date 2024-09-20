@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgres:16  # Используем образ PostgreSQL версии 16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 3225
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"  # Пробрасываем порт PostgreSQL
+    volumes:
+      - db_data:/var/lib/postgresql/data  # Сохраняем данные БД в volume
+
+  app:
+    build: .
+    depends_on:
+      - db
+    environment:
+      - DATABASE_HOST=db  # Имя хоста БД
+      - DATABASE_PORT=5432  # Порт БД
+      - DATABASE_NAME=postgres  # Имя БД
+      - DATABASE_USER=postgres  # Имя пользователя БД
+      - DATABASE_PASSWORD=3225  # Пароль для БД
+    volumes:
+      - .:/app  # Монтируем директорию проекта в контейнер
+    ports:
+      - "8000:8000"  # Пробрасываем порт для вашего приложения
+    command: python main.py  # Команда для запуска вашего приложения
+
+volumes:
+  db_data:
