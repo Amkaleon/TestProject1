@@ -30,8 +30,12 @@ def scrap_det_mir():
             browser.get('https://www.detmir.ru/')
             browser.implicitly_wait(2)
 
-            # Парсим баннер в header
-            data_list.extend(parse_header_banner(browser))
+            try:
+                # Парсим баннер в header
+                data_list.extend(parse_header_banner(browser))
+            except Exception as e:
+                logger.error(f'[!] На странице отстутствует баннер в шапке страницы'
+                             f'{e}', exc_info=True)
 
             # Парсим главные баннеры
             data_list.extend(parse_main_banners(browser))

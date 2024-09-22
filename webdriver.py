@@ -7,7 +7,7 @@ from config import useragent
 def create_driver():
     options = webdriver.ChromeOptions()
 
-    # options.add_argument('--headless')
+    options.add_argument('--headless')
     # options.add_argument('--disable-gpu')
     # options.add_argument(f"--proxy-server={random.choice(proxy_list)}")
     options.add_argument(f'--user-agent={useragent}')
@@ -16,7 +16,7 @@ def create_driver():
 
     # Получаем путь к папке с вебдрайвером
     driver_path = os.path.join(os.path.dirname(__file__), 'webdriver', 'chromedriver.exe')
-
+    #
     # Инициализация сервиса для драйвера
     service = Service(driver_path)
 

@@ -1,4 +1,5 @@
 import os
+
 import psycopg2
 from psycopg2 import Error
 
@@ -6,13 +7,23 @@ from logs.logger import setup_logger
 
 logger = setup_logger()
 
+connection = None  # Инициализация
+
 try:
-    # Подключение к существующей базе данных
-    connection = psycopg2.connect(user="postgres",
-                                  password="3225",
-                                  host="localhost",
-                                  port="5432",
-                                  database="postgres")
+
+    connection = psycopg2.connect(
+        user=os.getenv("DATABASE_USER"),
+        password=os.getenv("DATABASE_PASSWORD"),
+        host=os.getenv("DATABASE_HOST"),
+        port=os.getenv("DATABASE_PORT"),
+        database=os.getenv("DATABASE_NAME"))
+
+    # # Подключение к существующей базе данных
+    # connection = psycopg2.connect(user="postgres",
+    #                               password="3225",
+    #                               host="localhost",
+    #                               port="5432",
+    #                               database="postgres")
 
     # Курсор для выполнения операций с базой данных
     cursor = connection.cursor()
@@ -40,27 +51,28 @@ finally:
         cursor.close()
         connection.close()
 
+
 # Функция подключения к базе данных
 def connect_to_db():
     try:
         # Подключение к существующей базе данных
-
-        connection = psycopg2.connect(user="postgres",
-                                      password="3225",
-                                      host="localhost",
-                                      port="5432",
-                                      database="postgres")
+        connection = psycopg2.connect(
+            user=os.getenv("DATABASE_USER"),
+            password=os.getenv("DATABASE_PASSWORD"),
+            host=os.getenv("DATABASE_HOST"),
+            port=os.getenv("DATABASE_PORT"),
+            database=os.getenv("DATABASE_NAME"))
         return connection
 
     except (Exception, Error) as error:
         logger.error("Ошибка при подключении к базе данных", error, exc_info=True)
         return None
 
+
 # Функция для записи значений в таблицу DetMir
 def insert_data_list(connection, image_url, content_url, meta, place, position):
     try:
         cursor = connection.cursor()
-
 
         insert_query = """
         INSERT INTO DetMir (image_url, content_url, meta, place, position)
