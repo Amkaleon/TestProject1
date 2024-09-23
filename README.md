@@ -52,8 +52,7 @@
    docker-compose up --build
    ```
 
-   Эта команда:
-   - Запустит сервис PostgreSQL.
+   Эта команда соберет и запустит PostgreSQL.
 
 3. **Подключение к PostgreSQL:**
 
