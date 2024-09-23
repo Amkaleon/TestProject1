@@ -7,7 +7,7 @@ from config import useragent
 def create_driver():
     options = webdriver.ChromeOptions()
 
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     # options.add_argument('--disable-gpu')
     # options.add_argument(f"--proxy-server={random.choice(proxy_list)}")
     options.add_argument(f'--user-agent={useragent}')
