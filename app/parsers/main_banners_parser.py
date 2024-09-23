@@ -5,8 +5,9 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException,
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from database import connect_to_db, insert_data_list
+from app.config.database import connect_to_db, insert_data_list
 from psycopg2 import Error
+
 
 def parse_main_banners(browser) -> List[Dict[str, Any]]:
     data_list = []
@@ -92,7 +93,7 @@ def parse_main_banners(browser) -> List[Dict[str, Any]]:
         connection = connect_to_db()
         try:
             if connection:
-                insert_data_list(connection, image_url, content_url, caption_slide, 1, index+1)
+                insert_data_list(connection, image_url, content_url, caption_slide, 1, index + 1)
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
         finally:

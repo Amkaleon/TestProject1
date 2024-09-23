@@ -1,9 +1,9 @@
 from typing import List, Dict, Any
 
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import NoSuchElementException
 
-from database import connect_to_db, insert_data_list
+from app.config.database import connect_to_db, insert_data_list
 from psycopg2 import Error
 
 
@@ -64,7 +64,6 @@ def parse_under_main_banners(browser) -> List[Dict[str, Any]]:
             "place": 2,
             "position": index + 1
         })
-
 
         connection = connect_to_db()
         try:

@@ -5,7 +5,7 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException,
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from database import connect_to_db, insert_data_list
+from app.config.database import connect_to_db, insert_data_list
 from psycopg2 import Error
 
 

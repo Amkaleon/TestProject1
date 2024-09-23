@@ -1,13 +1,16 @@
 import logging
-
+import os
 
 def setup_logger():
     # Создание объекта логгера
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.INFO)
 
-    # Создание обработчика для вывода сообщений в файл
-    file_handler = logging.FileHandler('logs/app.log', encoding='utf-8')
+    # Получение абсолютного пути к папке logs
+    logs_dir = os.path.join(os.path.dirname(__file__), '../logs')
+    os.makedirs(logs_dir, exist_ok=True)  # Создаем папку, если ее нет
+
+    file_handler = logging.FileHandler(os.path.join(logs_dir, 'app.log'), encoding='utf-8')
     file_handler.setLevel(logging.INFO)
 
     # Создание форматировщика логов

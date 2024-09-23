@@ -1,7 +1,7 @@
 import os
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from config import useragent
+from app.config.config import useragent
 
 
 def create_driver():
@@ -15,7 +15,7 @@ def create_driver():
     options.add_argument("--disable-notifications")  # Отключает уведомления
 
     # Получаем путь к папке с вебдрайвером
-    driver_path = os.path.join(os.path.dirname(__file__), 'webdriver', 'chromedriver.exe')
+    driver_path = os.path.join(os.path.dirname(__file__), '../../webdriver', 'chromedriver.exe')
     #
     # Инициализация сервиса для драйвера
     service = Service(driver_path)
@@ -24,4 +24,3 @@ def create_driver():
     driver = webdriver.Chrome(service=service, options=options)
 
     return driver
-

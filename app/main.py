@@ -1,12 +1,12 @@
 import json
 
-from webdriver import create_driver
+from app.config.webdriver import create_driver
 from logs.logger import setup_logger
-from parsers.header_banner_parser import parse_header_banner
-from parsers.home_hot_deals_parser import parse_home_hot_deals
-from parsers.main_banners_parser import parse_main_banners
-from parsers.recommendations_parser import parse_recommendations
-from parsers.under_main_banners_parser import parse_under_main_banners
+from app.parsers.header_banner_parser import parse_header_banner
+from app.parsers.home_hot_deals_parser import parse_home_hot_deals
+from app.parsers.main_banners_parser import parse_main_banners
+from app.parsers.recommendations_parser import parse_recommendations
+from app.parsers.under_main_banners_parser import parse_under_main_banners
 
 # Работает на версии python 3.10
 # import undetected_chromedriver as uc
@@ -51,20 +51,22 @@ def scrap_det_mir():
 
             print('[+] Парсинг окончен успешно')
             logger.info('[+] Парсинг окончен успешно')
+
+            try:
+                with open('../DetMir.json', 'w', encoding='UTF-8') as json_file:
+                    # Преобразуем список словарей в строку формата JSON
+                    json.dump(data_list, json_file, indent=4, ensure_ascii=False)
+
+                    logger.info('[+] Данные успешно сохранены в файл DetMir.json')
+                    print('[+] Данные успешно сохранены в файл DetMir.json')
+                    print('[+] Данные успешно сохранены в таблицу DetMir')
+            except Exception as e:
+                logger.error(f'[!] Ошибка при сохранении данных: {e}', exc_info=True)
+                print('[!] Произошла ошибка при записи данных в файл DetMir.json')
+                print('[!] Произошла ошибка при записи данных в таблицу DetMir')
     except Exception as e:
         print(f'[!] Произошла ошибка во время парсинга: {e}')
         logger.error(f'[!] Ошибка при парсинге: {e}', exc_info=True)
-
-    try:
-        with open('DetMir.json', 'w', encoding='UTF-8') as json_file:
-            # Преобразуем список словарей в строку формата JSON
-            json.dump(data_list, json_file, indent=4, ensure_ascii=False)
-
-            logger.info('[+] Данные успешно сохранены в файл DetMir.json')
-            print('[+] Данные успешно сохранены в файл DetMir.json')
-    except Exception as e:
-        logger.error(f'[!] Ошибка при сохранении данных: {e}', exc_info=True)
-        print('[!] Произошла ошибка при записи данных в файл DetMir.json')
 
 
 def main():
@@ -73,3 +75,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
