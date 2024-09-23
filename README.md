@@ -60,7 +60,7 @@
    Вы можете получить доступ к базе данных через следующую команду Docker:
 
    ```bash
-   docker exec -it TestProject1-db-1 psql -U postgres -d postgres
+   docker exec -it testproject1-db-1 psql -U postgres -d postgres
    ```
 
    Также можно подключиться с помощью инструментов, таких как **pgAdmin**, используя следующие параметры:
