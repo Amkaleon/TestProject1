@@ -12,9 +12,9 @@
     - `webdriver.py` – инициализация веб-драйвера.
   - `parsers/` – содержит парсеры для извлечения данных.
     - `header_banner_parser.py` – парсер баннера в шапке.
-    - `home_hot_deals_parser.py` – парсер горячих предложений.
+    - `home_hot_deals_parser.py` – парсер предложений от брендов.
     - `main_banners_parser.py` – парсер главных баннеров.
-    - `recommendations_parser.py` – парсер рекомендаций.
+    - `recommendations_parser.py` – парсер блока "Может понравиться".
     - `under_main_banners_parser.py` – парсер товаров под баннерами.
 - `logs/` – содержит лог-файлы приложения.
   - `app.log` – файл с логами приложения.
